@@ -1,0 +1,45 @@
+.about-us {
+    &-content {
+        margin-top: 3em;
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        justify-content: center;
+        padding-bottom: 3em;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 90%;
+            height: 1px;
+            background: white;
+        }
+    }
+    &__left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__text {
+        text-align: center;
+        line-height: 230%;
+        font-size: 16px;
+        margin-bottom: 3em;
+    }
+    &__social {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        .social-platform {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .social__title {
+            font-size: 18px;
+            font-family: Aclonica;
+            line-height: 150%;
+        }
+    }
+}
