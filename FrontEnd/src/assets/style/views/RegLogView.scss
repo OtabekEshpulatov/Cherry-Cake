@@ -1,0 +1,68 @@
+.registration,
+.login {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}
+.login {
+    .reglog {
+        &__form {
+            & .submit {
+               width: 30%;
+               align-items: center;
+               margin-bottom: 0;
+            }
+        }
+        &__input {
+            width: 30%;
+        }
+    }
+}
+.reglog {
+    &__sub-title {
+        font-size: 32px;
+        font-family: Actor;
+        font-weight: 300;
+        margin-bottom: 1em;
+    }
+    &__title {
+        font-size: 25px;
+        font-family: Aclonica;
+        margin-bottom: 1em;
+    }
+    &__input {
+        width: 40%;
+        &.password {
+            position: relative;
+            & .show-pass {
+                position: absolute;
+                right: 1em;
+                top: 45%;
+                font-size: 20px;
+                transform: translateY(-100%);
+                color: var(--brown);
+            }
+        }
+    }
+    &__form {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        & .submit {
+            width: 40%;
+            font-weight: bold;
+            margin-bottom: 1em;
+        }
+    }
+}

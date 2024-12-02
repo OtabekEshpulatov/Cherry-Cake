@@ -1,0 +1,22 @@
+.v-field {
+    background-color: white;
+    color: black;
+    border: none;
+    &--focused {
+        color: black;
+        border: none;
+    }
+}
+.v-text-field .v-input__details {
+    padding: 0;
+}
+.v-messages {
+    height: 30px;
+    border-radius: 0 0 15px 15px ;
+    display: flex;
+    font-size: 15px;
+    align-items: center;
+    padding-left: 1em;
+    background-color: white;
+    opacity: 0;
+}

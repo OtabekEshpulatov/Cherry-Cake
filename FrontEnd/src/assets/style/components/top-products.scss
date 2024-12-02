@@ -1,0 +1,87 @@
+.top-products {
+    margin-top: 2em;
+    padding-bottom: 2em;
+    &__white-btn {
+        margin-top: 3em;
+        font-size: 18px;
+        padding: 5px 25px;
+    }
+    &-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 25px;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 90%;
+            height: 1px;
+            background: white;
+        }
+    }
+    &:focus {
+        color: white;
+    }
+    &__row {
+        margin-top: 3em;
+        gap: 90px;
+        justify-content: center;
+    }
+
+    & .top-card {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        &__left {
+            & img {
+                width: 100%;
+                height: 100%;
+                border-radius: 15px;
+            }
+        }
+        &__title {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__name {
+            font-family: Aclonica;
+            font-size: 18px;
+            line-height: 150%;
+            letter-spacing: 5%;
+            text-transform: uppercase;
+        }
+        &__price {
+            padding: 10px 20px;
+            border: 2px solid var(--orange);
+            border-radius: 5px;
+            font-size: 18px;
+            line-height: 150%;
+            letter-spacing: 5%;
+            font-family: Adlam;
+        }
+        &__size {
+            color: #ff9e61;
+            font-size: 18px;
+            line-height: 100%;
+        }
+        &__description {
+            font-family: Actor;
+            font-size: 16px;
+            line-height: 150%;
+            & h4 {
+                margin-top: 1em;
+            }
+        }
+    }
+}
+.title {
+    text-align: center;
+    font-family: Abril_Fatface;
+    font-size: 40px;
+    line-height: 150%;
+    letter-spacing: 5%;
+    color: white;
+    text-transform: uppercase;
+}
