@@ -3,3 +3,6 @@
 
 ## Automated test  
 [View test cases](https://app.testomat.io/projects/cherry-cake/)
+
+## Manual testing 
+[View reports](https://drive.google.com/drive/folders/1JHL-27C_f79iOSQdV3XWfCvFatVpsRH1?usp=sharing)
