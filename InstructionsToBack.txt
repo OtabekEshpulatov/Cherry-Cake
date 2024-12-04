@@ -1,0 +1,4 @@
+First of all install the database backup.
+Second you need to enter inside backend and in Dbconnection class enter correct data (url(jdbc format), user and password)
+Third resolve dependencies on pom.xml
+Fourth run the Main spring class
