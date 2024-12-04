@@ -1,10 +1,9 @@
 <template>
-  <HeaderComponent />
-  <TopProducsComponent />
-  <AboutUsComponent />
-  <ContactsComponent />
+  <HeaderComponent aria-labelledby="header-title" />
+  <TopProducsComponent aria-labelledby="top-products-title" />
+  <AboutUsComponent aria-labelledby="about-us-title" />
+  <ContactsComponent aria-labelledby="contacts-title" />
 </template>
-
 <script>
 import TopProducsComponent from '@/components/TopProductsComponent.vue'
 import AboutUsComponent from '@/components/Home/AboutUsComponent.vue'

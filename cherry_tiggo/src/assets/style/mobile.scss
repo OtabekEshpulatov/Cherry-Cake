@@ -5,9 +5,6 @@
     display: none;
 }
 @media screen and (max-width: 1200px) {
-    .menu-content{
-        max-width: none;
-    }
     .reglog__form .submit {
         margin: 0;
     }
@@ -104,33 +101,53 @@
     }
 }
 @media screen and (max-width: 991px) {
-    .menu-card__modal-win .modal-win__text{
+    .menu-cart__submit {
+        width: 50%;
+        margin: 0;
+    }
+    .menu-card__modal-win .modal-win__text {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
-    .menu-card__modal-win .modal-win__left{
+    .menu-card__modal-win .modal-win__left {
         margin-left: 0;
     }
-    .menu-card__modal-win .modal-win__title{
+    .menu-card__modal-win .modal-win__title {
         margin: 0;
         width: 100%;
         text-align: center;
     }
-    .menu-card__modal-win .modal-win__img{
+    .menu-card__modal-win .modal-win__img {
         padding: 10px;
     }
     .menu-order__date-total {
         flex-direction: column;
     }
+    .v-date-picker {
+        max-width: 125%;
+    }
+    .menu-order__modal-win {
+        width: 100%;
+        position: fixed;
+
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+        z-index: 1000;
+        height: 100%;
+    }
     .menu-cart-content {
+        min-width: 80%;
+        max-height: 95vh;
+        overflow-y: auto;
         padding: 10px 10px;
         background-color: #b35013;
         border-radius: 15px;
     }
     .menu-order-content {
-        max-height: 90%; /* Ограничение высоты модального окна */
-        overflow-y: auto; /* Прокрутка содержимого при необходимости */
         background-color: #b35013;
 
         padding: 20px;
@@ -178,70 +195,68 @@
             justify-content: center;
         }
     }
-    @media screen and (max-width: 576px) {
-        .menu-cart__item {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        .menu-order__label {
-            text-align: center;
-        }
-        .menu-order__date {
-            width: 90%;
-        }
-        .v-date-picker{
-            width: 130%;
-        }
-        .menu-order__total{
-            width: 90%;
-        }
-        .menu-order__total-price-desc{
-            margin: 0;
-        }
-        .menu-order__total-price-title{
-            font-size: 27px;
-            margin-bottom: 10px;
-        }
-        .menu-order__input {
-            width: 90%;
-            min-width: 200px;
-        }
-        .login .reglog__input {
-            width: 90%;
-        }
-        .reglog__input {
-            width: 90%;
-        }
-        .reglog__form .submit {
-            width: 90%;
-            margin: 0;
-        }
-        .menu-cart-items {
-            grid-template-columns: repeat(1, 1fr);
-        }
-        .menu-cart__submit {
-            width: 50%;
-            margin-right: 0;
-        }
-        .title {
-            font-size: 25px;
-        }
-        .mobile {
-            align-items: center;
-        }
-        .header-section__title {
-            font-size: 20px;
-        }
-        .about-us__text {
-            width: 90%;
-        }
-        .top-card {
-            flex-direction: column;
-        }
-    }
 }
 @media screen and (max-width: 576px) {
+    .menu-cart__item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .menu-order__label {
+        text-align: center;
+    }
+    .menu-order__date {
+        width: 90%;
+    }
+    .v-date-picker {
+        width: 130%;
+    }
+    .menu-order__total {
+        width: 90%;
+    }
+    .menu-order__total-price-desc {
+        margin: 0;
+    }
+    .menu-order__total-price-title {
+        font-size: 27px;
+        margin-bottom: 10px;
+    }
+    .menu-order__input {
+        width: 90%;
+        min-width: 200px;
+    }
+    .login .reglog__input {
+        width: 90%;
+    }
+    .reglog__input {
+        width: 90%;
+    }
+    .reglog__form .submit {
+        width: 90%;
+        margin: 0;
+    }
+    .menu-cart-items {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .menu-cart__submit {
+        width: 50%;
+        margin-right: 0;
+    }
+    .title {
+        font-size: 25px;
+    }
+    .mobile {
+        align-items: center;
+    }
+    .header-section__title {
+        font-size: 20px;
+    }
+    .about-us__text {
+        width: 90%;
+    }
+    .top-card {
+        flex-direction: column;
+    }
     .menu-btn.submit-btn {
         width: 100%;
         margin: 10px 0 0 0;

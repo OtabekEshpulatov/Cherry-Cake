@@ -1,26 +1,31 @@
 <template>
-  <section class="login">
+  <section class="login" aria-labelledby="login-title">
     <div class="login-content">
-      <h2 class="reglog__title">CHERRY CAKE CAFE</h2>
-      <span class="reglog__sub-title">Log in to your account</span>
-      <form @submit.prevent class="reglog__form">
-        <span>Welcome back! Please enter your details.</span>
-        <div class="reglog__input"></div>
+      <h2 id="login-title" class="reglog__title">CHERRY CAKE CAFE</h2>
+      <p class="reglog__sub-title">Log in to your account</p>
+      <form @submit.prevent class="reglog__form" aria-labelledby="login-title" novalidate>
+        <p>Welcome back! Please enter your details.</p>
+
+        <!-- Phone Number Input -->
         <div class="reglog__input">
+          <label for="phone-number" class="sr-only">Phone Number</label>
           <v-text-field
+            id="phone-number"
             label="Phone Number"
             v-model="phoneNumber"
             autocomplete="tel"
             :rules="[
               (v) => !!v || 'Error: This field is mandatory',
-              (v) =>
-                /^(\+?\d{1,4}[\s\-]?)?(\(?\d{3}\)?[\s\-]?)?[\d\s\-]{7,15}$/.test(v) ||
-                'Error: Invalid phone number Format: 998112223344',
+              (v) => /^(\+?\d{1,4}[\s\-]?)?(\(?\d{3}\)?[\s\-]?)?[\d\s\-]{7,15}$/.test(v) || 'Error: Invalid phone number Format: 998112223344',
             ]"
           ></v-text-field>
         </div>
+
+        <!-- Password Input -->
         <div class="reglog__input password">
+          <label for="password" class="sr-only">Password</label>
           <v-text-field
+            id="password"
             label="Password"
             v-model="password"
             autocomplete="new-password"
@@ -28,25 +33,36 @@
             :rules="[
               (v) => !!v || 'Error: This field is mandatory',
               (v) => v.length >= 8 || 'Error: Minimum 8 characters required',
-              (v) =>
-                /[A-Z]/.test(v) || 'Error: Password must contain at least one uppercase letter',
+              (v) => /[A-Z]/.test(v) || 'Error: Password must contain at least one uppercase letter',
               (v) => /\d/.test(v) || 'Error: Password must contain at least one number',
-              (v) =>
-                /[!@#$%^&*(),.?:{}|<>]/.test(v) ||
-                'Error: Password must contain at least one special character',
+              (v) => /[!@#$%^&*(),.?:{}|<>]/.test(v) || 'Error: Password must contain at least one special character',
             ]"
           ></v-text-field>
-          <button class="show-pass" @click="isHidePass = !isHidePass">
-            <i :class="isHidePass ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash'"></i>
+          <button
+            class="show-pass"
+            type="button"
+            @click="isHidePass = !isHidePass"
+            aria-label="Toggle password visibility"
+          >
+            <i :class="isHidePass ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash'" aria-hidden="true"></i>
           </button>
         </div>
-        <WhiteBtn class="submit" @click="loginUser()"
-          ><button type="submit" class="submit">Continue Your Journey !</button></WhiteBtn
-        >
+
+        <!-- Submit Button -->
+        <WhiteBtn class="submit" @click="loginUser()">
+          <button
+            type="submit"
+            class="submit"
+            aria-label="Log in to your account"
+          >
+            Continue Your Journey!
+          </button>
+        </WhiteBtn>
       </form>
     </div>
   </section>
 </template>
+
 
 <script>
 import WhiteBtn from '@/components/UI/WhiteBtn.vue'
@@ -66,7 +82,6 @@ export default {
   methods: {
     ...mapActions(['sendLoginUser']),
     async loginUser() {
-      // Правила для проверки полей
       const phoneNumberRules = [
         (v) => !!v || 'Error: This field is mandatory',
         (v) =>
@@ -88,13 +103,12 @@ export default {
         for (const rule of rules) {
           const error = rule(value)
           if (error !== true) {
-            return error // Возвращаем первую ошибку
+            return error
           }
         }
-        return true // Если ошибок нет
+        return true
       }
 
-      // Проверяем поля
       const phoneNumberError = validateField(this.phoneNumber, phoneNumberRules)
       const passwordError = validateField(this.password, passwordRules)
 
@@ -107,10 +121,9 @@ export default {
             .filter(Boolean)
             .join('\n')
         )
-        return // Не выполняем метод, если есть ошибки
+        return
       }
 
-      // Если всё корректно, отправляем данные
       const sendData = {
         phoneNumber: this.phoneNumber.toString(),
         password: this.password,

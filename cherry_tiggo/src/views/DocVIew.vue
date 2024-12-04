@@ -5,26 +5,35 @@
       frameborder="0"
       width="90%"
       height="90%"
+      title="Google Document"
+      aria-label="Embedded document showing the content of the Google document"
     ></iframe>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      interval: null,
+    }
+  },
   mounted() {
-    setInterval(() => {
+    this.interval = setInterval(() => {
       console.clear()
-    }, 2000);
+    }, 2000)
+  },
+  beforeUnmount() {
+    clearInterval(this.interval)
   },
 }
 </script>
 
 <style lang="scss" scoped>
 .doc {
-  height: 100%;
-  width: 100%;
+  height: 95%;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 </style>

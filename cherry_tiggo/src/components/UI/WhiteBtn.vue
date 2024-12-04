@@ -1,18 +1,12 @@
 <template>
-  <button type="button" class="btn btn-light white-btn">{{placeholder}}</button>
+  <div class="btn btn-light white-btn">
+    <slot></slot>
+  </div>
 </template>
 
 <script>
-    export default {
-        props:{
-            placeholder:{
-                type: String,
-                require: true
-            }
-        }
-    }
+export default {}
 </script>
 
 <style lang="scss" scoped>
-
 </style>

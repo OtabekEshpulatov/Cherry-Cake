@@ -1,9 +1,9 @@
 /* ZERO STYLE */
-@use "@/assets/style/varibles.scss" ;
-@use "components/components.scss";
+@use "@/assets/style/varibles.scss";
 @use "views/views.scss";
 @use "@/assets/fonts/fonts.scss";
-
+@use "components/components.scss";
+@use "mobile.scss";
 * {
     padding: 0;
     margin: 0;
@@ -81,6 +81,7 @@ h5,
 h6 {
     font-size: inherit;
     font-weight: inherit;
+    margin: 0;
 }
 /* ---------------------------------------------------------- */
 

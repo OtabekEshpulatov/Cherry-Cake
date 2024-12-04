@@ -1,8 +1,13 @@
 .about-us {
+    &__right {
+        img {
+            width: 100%;
+        }
+    }
     &-content {
         margin-top: 3em;
         display: flex;
-        align-items: center;
+
         gap: 60px;
         justify-content: center;
         padding-bottom: 3em;
@@ -17,6 +22,7 @@
         }
     }
     &__left {
+        padding-top: 5em;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
