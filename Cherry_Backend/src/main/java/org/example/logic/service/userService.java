@@ -10,7 +10,7 @@ public class userService {
     public userService(UserDAL userDal){
         this.userDal = userDal;
     }
-    public int registerUser(User user){
+    public String[] registerUser(User user){
 
         User result= new User(user.getFullName(),user.getPhone(),user.getPassword());
         return userDal.registerUser(result);

@@ -12,13 +12,14 @@ public class UserDAL {
     public UserDAL(DbConnection connection) {
         this.connection = connection;
     }
-    public int registerUser(User user){
+    public String [] registerUser(User user){
+        String [] result= {"404","404"};
         String fullName=user.getFullName();
         String phone=user.getPhone();
         String password=user.getPassword();
         boolean checkNumber=checkNumber(phone);
         if (!checkNumber){
-            return 400;
+            return result;
         }
         try (Connection dbConnection=connection.getConnection()){
             String query="INSERT INTO Users (fullName, phone, password) VALUES (? , ? , ?)";
@@ -27,10 +28,14 @@ public class UserDAL {
             statement.setString(2,phone);
             statement.setString(3,password);
             statement.executeUpdate();
-            return searchUserByPhone(phone);
+            String userid=String.valueOf(searchUserByPhone(phone));
+            String username=getFullNameByPhone(phone);
+            result [0]=userid;
+            result [1]=username;
+            return result;
         }catch (SQLException s){
             s.printStackTrace();
-            return 404;
+            return result;
         }
     }
     public String[] loginUser(String phoneNumber,String password){

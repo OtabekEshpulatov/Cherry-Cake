@@ -17,7 +17,7 @@ public class UserApi {
     }
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/register")
-    public int registerUser(@RequestBody User user){
+    public String[] registerUser(@RequestBody User user){
         userService service=new userService(userDal);
         return service.registerUser(user);
     }
